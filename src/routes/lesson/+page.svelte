@@ -16,9 +16,12 @@
     });
 </script>
 <IonPage>
-    Title: {lesson.title}<br/>
-    Description: {lesson.description}<br/>
-    {@html lesson.content}    
+    <div class="ion-padding" style="width: 100%; height: 100%;">
+            <h2>Title: {lesson.title}<br/></h2>
+            <h3>Description: {lesson.description}<br/></h3>
+            {@html lesson.content}
+        <br/><br/><br/>
+    </div>
 </IonPage>
 <style>
 </style>
