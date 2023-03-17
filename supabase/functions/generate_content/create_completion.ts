@@ -1,16 +1,16 @@
-export const createCompletion = async (prompt: string, item_type: string) => {
+export const createCompletion = async (prompt: string, options: any) => {
     try {
       const response = await fetch(
         `https://api.openai.com/v1/chat/completions`, 
         {
           body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
+            model: options.model || 'gpt-3.5-turbo',
             messages: [{"role": "user", "content": prompt}],
-            temperature: 1.0,
-            max_tokens: item_type === 'lesson' ? 3000 : 1200,
-            top_p: 1,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0
+            temperature: options.temperature || 0.0, // 1.0,
+            max_tokens: option.max_tokens || 3000,
+            top_p: options.top_p || 1,
+            frequency_penalty: options.frequency_penalty || 0.0,
+            presence_penalty: options.presence_penalty || 0.0
             //best_of: 1
           }),
           headers: {

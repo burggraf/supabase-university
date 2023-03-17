@@ -45,7 +45,7 @@
 
 <IonPage>
 	<ion-header>
-		<ion-toolbar translucent="true" color="tertiary">
+		<ion-toolbar translucent="true" color="primary">
 			<ion-buttons slot="start">
 				{#if $currentUser}
 					<ion-menu-button />

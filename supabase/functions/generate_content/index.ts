@@ -22,15 +22,6 @@ serve(async (req) => {
     return RESPONSE({ error: 'User not found' });
   }
 
-  const { data: creditData, error: creditError} = await supabase
-  .rpc('get_my_plan');
-  if (creditError) {
-    return RESPONSE({ error: creditError})
-  }
-  if (creditData?.credits_remaining <= 0) {
-    return RESPONSE({ error: 'Over quota: not enough credits to generate this item' })
-  }
-
   const { data: lessonData, error: lessonError } = await supabase
     .from('lessons')
     .select('title,description,settings,content')
