@@ -75,7 +75,18 @@
                 />
             </ion-item>
             <ion-item lines="none">
-                <ion-label position="stacked">Tell us about yourself:</ion-label>
+                <ion-label position="stacked">Category</ion-label>
+                <ion-input
+                    name="category"
+                    debounce={500}
+                    on:ionChange={save}
+                    type="text"
+                    placeholder="Category"
+                    value={course.category}
+                />
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label position="stacked">Description</ion-label>
                 <ion-input
                     name="description"
                     debounce={500}
