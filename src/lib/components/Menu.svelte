@@ -40,6 +40,7 @@
 
 	const appPages: Array<{ title: string, url: string; requireLogin: boolean; icon: any }> = [
 		{ title: 'Welcome', url: '/', icon: allIonicIcons.informationCircleOutline, requireLogin: false },
+		{ title: 'Courses', url: '/courses', icon: allIonicIcons.bookOutline, requireLogin: true },
 		{ title: 'Lessons', url: '/lessons', icon: allIonicIcons.documentOutline, requireLogin: true },
 		{ title: 'Account', url: '/account', icon: allIonicIcons.personOutline, requireLogin: true },
 		{ title: 'Settings', url: '/settings', icon: allIonicIcons.settingsOutline, requireLogin: true },
