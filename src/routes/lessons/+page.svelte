@@ -8,9 +8,20 @@
     import { currentUser } from '$services/supabase.auth.service';
 	import * as allIonicIcons from 'ionicons/icons';
 
+    let course_id = '';
     let lessons: any = [];
     onMount(async () => {
-      const {data, error} = await getLessons({});
+      if (!$currentCourse) {
+        goto('/courses');
+        return;
+      } else {
+        course_id = $currentCourse.id;
+        if (!course_id) {
+            goto('/courses');
+            return;
+        }
+      }
+      const {data, error} = await getLessons({course_id});
       if (error) console.error('error', error);
       else lessons = data;
       console.log('lessons', lessons);
