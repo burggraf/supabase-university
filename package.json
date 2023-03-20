@@ -2,7 +2,7 @@
   "name": "supau",
   "short_name": "supau",
   "description": "Supabase University",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "homepage": "https://supau.org",
   "menu_title": "Supabase University",
